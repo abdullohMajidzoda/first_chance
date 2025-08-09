@@ -41,7 +41,7 @@
                 <div class="col-md-10">
                     <div class="row g-2">
                         <div class="col-md-6">
-                            <input type="text" class="form-control border-0" placeholder="Keyword" wire:model.live="search" />
+                            <input type="text" class="form-control border-0" placeholder="Keyword, Location" wire:model.live="search" />
                         </div>
                         <div class="col-md-6">
                             <select class="form-select border-0" wire:model.live="selectedType">

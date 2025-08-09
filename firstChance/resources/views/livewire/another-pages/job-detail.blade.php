@@ -27,7 +27,7 @@
                     </div>
     
                     <div class="">
-                        <h4 class="mb-4">Apply For The Job</h4>
+                        <h4 class="mb-4">Apply For A Job</h4>
                         @if (session('send_email'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
                                 {{session('send_email')}}
