@@ -49,12 +49,36 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto p-4 p-lg-0">
                         <a href="{{ route('home') }}" wire:current.strict="active" wire:navigate class="nav-item nav-link active">Home</a>
-                        <a href="#" class="nav-item nav-link">About</a>
-                        <a href="contact.html" class="nav-item nav-link">Contact</a>
+                        <a href="#" wire:navigate class="nav-item nav-link">Contact</a>     
+                        <a href="#" wire:navigate class="nav-item nav-link">About</a>
+                        @guest
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Register & Login</a>
+                            <div class="dropdown-menu rounded-0 m-0">
+                                <a href="{{route('login')}}" wire:navigate class="dropdown-item ">Login</a>     
+                                <a href="{{route('register')}}" wire:navigate class="dropdown-item">Register</a>
+                            </div>
+                        </div>
+                        @endguest
+                        @auth
+                            <a href="{{ route('favorite', auth()->user()->name) }}" wire:navigate class="nav-item nav-link">Favorites</a>
+                        @endauth
                     </div>
                     <a href="{{ route('jobCreate') }}" wire:navigate class="btn btn-primary rounded-0 py-4 px-lg-5 d-none d-lg-block">Post A Job<i class="fa fa-arrow-right ms-3"></i></a>
                 </div>
             </nav>
+            @if (session('register'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{session('register')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (session('login_success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{session('login_success')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
         </div>
 
             {{ $slot }}   
@@ -98,7 +122,7 @@
                     <div class="copyright">
                         <div class="row">
                             <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
-                                &copy; <a class="border-bottom" href="#">Your Site Name</a>, All Right Reserved.
+                                &copy; <a class="border-bottom" href="{{route('home')}}">firstchance.com</a>, All Right Reserved.
                             </div>
                             <div class="col-md-6 text-center text-md-end">
                                 <div class="footer-menu">

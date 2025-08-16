@@ -51,13 +51,6 @@
                                 @endforeach
                             </select>
                         </div>
-                        {{-- <div class="col-md-4">
-                            <select class="form-select border-0">
-                                @foreach ($positions as $position)     
-                                <option value="{{ $position->id }}">{{ $position->location }}</option>
-                                @endforeach
-                            </select>
-                        </div> --}}
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -73,6 +66,12 @@
             @if (session('success'))
                 <div class="alert alert-success alert-dismissible fade show" role="alert">
                     {{session('success')}}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+            @if (session('favorite_success'))
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    {{session('favorite_success')}}
                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                 </div>
             @endif
@@ -110,10 +109,15 @@
                                 </div>
                                 <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-light btn-square me-3" href=""><i class="far fa-heart text-primary"></i></a>
+                                        <a class="btn btn-light btn-square me-3" wire:click="addToFavorites({{ $position->id }})"><i class="far fa-heart text-primary"></i></a>
+                                        <div wire:loading wire:target="addToFavorites({{ $position->id }})" style="position: relative; width:100%; height:100%; background:rgba(255,255,255, .7); text-align:center; padding-top:20px">
+                                            <div class="spinner-border text-primary" role="status">
+                                                <span class="visually-hidden">Loading...</span>
+                                            </div>
+                                        </div>
                                         <a class="btn btn-primary" wire:navigate href="{{ route('jobDetail', $position->id) }}">Apply Now</a>
                                     </div>
-                                    <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Date Line: {{ $position->created_at }}</small>
+                                    <small class="text-truncate"><i class="far fa-calendar-alt text-primary me-2"></i>Date Line: {{ $position->created_at->format('d M, Y') }}</small>
                                 </div>
                             </div>
                             @endforeach

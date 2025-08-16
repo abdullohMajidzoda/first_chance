@@ -46,7 +46,7 @@
                     <div class="bg-light rounded p-5 mb-4 wow slideInUp" data-wow-delay="0.1s">
                         <h4 class="mb-4">Job Summery</h4>
                         <p><i class="fa fa-angle-right text-primary me-2"></i>Company Name: {{$position->company_name}} </p>
-                        <p><i class="fa fa-angle-right text-primary me-2"></i>Published On: {{$position->created_at}} </p>
+                        <p><i class="fa fa-angle-right text-primary me-2"></i>Published On: {{$position->created_at->format('d M, Y')}} </p>
                         <p><i class="fa fa-angle-right text-primary me-2"></i>Job Nature: {{$position->employment_type}} </p>
                         <p><i class="fa fa-angle-right text-primary me-2"></i>Salary: {{$position->salary}} </p>
                         <p><i class="fa fa-angle-right text-primary me-2"></i>Location:{{$position->location}} </p>

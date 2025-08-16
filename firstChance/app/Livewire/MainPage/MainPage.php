@@ -6,6 +6,8 @@ use Livewire\Component;
 use App\Models\Position;
 use App\Models\Type;
 use Livewire\WithPagination;
+use Illuminate\Support\Facades\Auth;
+use App\Models\FavoriteJob;
 
 class MainPage extends Component
 {
@@ -18,6 +20,25 @@ class MainPage extends Component
     public function mount()
     {
         $this->types = Type::all();
+    }
+
+    /* Add Favorite */
+
+    public function addToFavorites(Position $position)
+    {
+        $favorite = FavoriteJob::firstOrCreate([
+            'user_id' => Auth::id(),
+            'position_id' => $position->id,
+        ]);
+
+        if($favorite->wasRecentlyCreated){
+            $message = "Job added to favorites successfully.";
+        }
+        else{
+            $message = "Job is already in favorites.";
+        }
+        session()->flash('favorite_success', $message);
+        // return $this->redirectRoute('favorite', ['user' => Auth::user()], navigate: true);
     }
 
     public function render()
