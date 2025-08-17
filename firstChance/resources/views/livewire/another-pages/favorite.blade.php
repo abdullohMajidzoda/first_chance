@@ -1,6 +1,6 @@
 <div class="container-xxl py-5">
     <div class="container">
-        <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Favorites</h1>
+        <h1 class="text-center mb-5 wow fadeInUp" data-wow-delay="0.1s">Favorites Jobs</h1>
         <div class="tab-class text-center wow fadeInUp" data-wow-delay="0.3s">
            @if (session('favorite_removed'))
                 <div class="alert alert-danger alert-dismissible fade show" role="alert">
