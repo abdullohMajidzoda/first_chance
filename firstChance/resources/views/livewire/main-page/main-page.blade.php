@@ -106,10 +106,10 @@
                                         <span class="text-truncate me-3"><i class="far fa-clock text-primary me-2"></i>{{ $position->employment_type }}</span>
                                         <span class="text-truncate me-0"><i class="far fa-money-bill-alt text-primary me-2"></i> {{ $position->salary }} </span>
                                     </div>
-                                </div>
+                                </div>                                 
                                 <div class="col-sm-12 col-md-4 d-flex flex-column align-items-start align-items-md-end justify-content-center">
                                     <div class="d-flex mb-3">
-                                        <a class="btn btn-light btn-square me-3" wire:click="addToFavorites({{ $position->id }})"><i class="far fa-heart text-primary"></i></a>
+                                       @auth <a class="btn btn-light btn-square me-3" wire:click="addToFavorites({{ $position->id }})"><i class="far fa-heart text-primary"></i></a> @endauth
                                         <div wire:loading wire:target="addToFavorites({{ $position->id }})" style="position: relative; width:100%; height:100%; background:rgba(255,255,255, .7); text-align:center; padding-top:20px">
                                             <div class="spinner-border text-primary" role="status">
                                                 <span class="visually-hidden">Loading...</span>
