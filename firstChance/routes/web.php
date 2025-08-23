@@ -8,7 +8,7 @@ use App\Livewire\AnotherPages\EmailForm;
 use App\Livewire\User\UserForm;
 use App\Livewire\User\LoginForm;
 use App\Livewire\AnotherPages\Favorite;
-// use App\Livewire\AnotherPages\FavoriteCreate;
+use App\Livewire\AnotherPages\About;
 
 
 // Route::get('/', function () {
@@ -22,4 +22,4 @@ Route::get('/email-form', EmailForm::class)->name('emailForm');
 Route::get('/register', UserForm::class)->name('register');
 Route::get('/login', LoginForm::class)->name('login');
 Route::get('/favorite/{user}', Favorite::class)->name('favorite');
-// Route::post('/favorite-create/{position}', FavoriteCreate::class)->name('favoriteCreate');
+Route::get('/about', About::class)->name('about');
