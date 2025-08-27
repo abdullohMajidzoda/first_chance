@@ -35,10 +35,10 @@
                     </div>
                     <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
                         <h1 class="mb-4">We Help To Get The Best Job And Find A Talent</h1>
-                        <p class="mb-4">Tempor erat elitr rebum at clita. Diam dolor diam ipsum sit. Aliqu diam amet diam et eos. Clita erat ipsum et lorem et sit, sed stet lorem sit clita duo justo magna dolore erat amet</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Tempor erat elitr rebum at clita</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Aliqu diam amet diam et eos</p>
-                        <p><i class="fa fa-check text-primary me-3"></i>Clita duo justo magna dolore erat amet</p>
+                        <p class="mb-4">At our platform, we believe that every person deserves the opportunity to unlock their true potential. Whether you are searching for the job of your dreams or looking to build a strong team, we are here to help you succeed. We connect ambitious professionals with companies that value talent, creativity, and dedication. Our mission is simple: to guide job seekers toward the right opportunities while helping employers discover individuals who can drive their business forward.</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Unlock your true potential</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Find the right job for you</p>
+                        <p><i class="fa fa-check text-primary me-3"></i>Build a strong and talented team</p>
                     </div>
                 </div>
             </div>

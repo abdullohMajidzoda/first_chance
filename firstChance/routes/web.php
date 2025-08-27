@@ -9,7 +9,7 @@ use App\Livewire\User\UserForm;
 use App\Livewire\User\LoginForm;
 use App\Livewire\AnotherPages\Favorite;
 use App\Livewire\AnotherPages\About;
-
+use App\Livewire\AnotherPages\Contact;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -23,3 +23,4 @@ Route::get('/register', UserForm::class)->name('register');
 Route::get('/login', LoginForm::class)->name('login');
 Route::get('/favorite/{user}', Favorite::class)->name('favorite');
 Route::get('/about', About::class)->name('about');
+Route::get('/contact', Contact::class)->name('contact');

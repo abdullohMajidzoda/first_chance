@@ -49,7 +49,7 @@
                 <div class="collapse navbar-collapse" id="navbarCollapse">
                     <div class="navbar-nav ms-auto p-4 p-lg-0">
                         <a href="{{ route('home') }}" wire:current.strict="active" wire:navigate class="nav-item nav-link active">Home</a>
-                        {{-- <a href="#" wire:navigate class="nav-item nav-link">Contact</a>      --}}
+                        <a href="{{ route('contact') }}" wire:navigate class="nav-item nav-link">Contact</a>     
                         <a href="{{ route('about') }}" wire:navigate class="nav-item nav-link">About</a>
                         @guest
                         <div class="nav-item dropdown">
